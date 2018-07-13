@@ -33,7 +33,7 @@ $scope.setStyling = function(col, row) {
   return COLORS.BOARD;
 };
 
-###The last piece of the puzzle is to add an ‘update’ method to update our board, snake, and fruit. For this I utilized the $timeout method rather than $interval, to allow for dynamic speed (every 5 fruits eaten speeds up the interval).I simply add a new piece to the front, and pop off the current tail. The $timeout completion fires of a digest which will call the setStyling for each column/row.
+## The last piece of the puzzle is to add an ‘update’ method to update our board, snake, and fruit. For this I utilized the $timeout method rather than $interval, to allow for dynamic speed (every 5 fruits eaten speeds up the interval).I simply add a new piece to the front, and pop off the current tail. The $timeout completion fires of a digest which will call the setStyling for each column/row.
 
 function update() {
   var newHead = getNewHead();
@@ -52,6 +52,6 @@ function update() {
   snake.direction = tempDirection;
   $timeout(update, interval);
 }
-##### Because of the way we use ng-style, AngularJS handles all the magic of rendering our columns and rows, and changing the styles accordingly. All we do is manage state.
+## Because of the way we use ng-style, AngularJS handles all the magic of rendering our columns and rows, and changing the styles accordingly. All we do is manage state.
 
-###### I thought it was a great little project to practice important Angular principles while exploring alternative uses for the framework. Hope you all enjoy.
+##### I thought it was a great little project to practice important Angular principles while exploring alternative uses for the framework. Hope you all enjoy.
